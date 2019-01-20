@@ -1,4 +1,4 @@
-[![Test Image](https://raw.githubusercontent.com/shayd3/IAmRyanRoss.github.io/master/src/assets/img/demo-image-01.jpg "Optional Title")](#screenshot)
+[![Screenshot](https://raw.githubusercontent.com/shayd3/IAmRyanRoss.github.io/master/src/assets/img/demo-image-01.jpg "Optional Title")](#screenshot)
 
 
 # IAmRyanRoss

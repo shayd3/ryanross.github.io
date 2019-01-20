@@ -1,25 +1,41 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from "@angular/common/http";
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+/* Material Angular Modules */
+import {MatButtonModule, MatCheckboxModule, MatDialogModule, MatCardModule} from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { ReposComponent } from './repos/repos.component';
-import { RepoDetailComponent } from './repo-detail/repo-detail.component';
 
 import { ApiService } from './api.service';
+import { RepoDialogComponent } from './repo-dialog/repo-dialog.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     ReposComponent,
-    RepoDetailComponent
+    RepoDialogComponent
   ],
   imports: [
     HttpClientModule,
-    BrowserModule
+    BrowserModule,
+    NgbModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatCheckboxModule,
+    MatDialogModule,
+    MatCardModule
   ],
-  providers: [ApiService],
-  bootstrap: [AppComponent]
+  providers: [
+    ApiService
+  ],
+  bootstrap: [AppComponent],
+  entryComponents: [
+    RepoDialogComponent
+  ]
 })
 export class AppModule { }

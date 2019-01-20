@@ -8,7 +8,7 @@
           <h5 class="card-title">{{ repo.name }}</h5>
           <p class="card-text" *ngIf="repo.description != null">{{ repo.description }}</p>
           <!-- TODO: open repo-detail component on repo id, replace href -->
-          <a href="#" class="btn btn-primary mt-auto">Details</a>
+          <button mat-raised-button color="primary" class="mt-auto" (click)="openDialog()">Details</button>
         </div>
       </div>
     </div>

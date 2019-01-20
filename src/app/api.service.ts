@@ -19,6 +19,10 @@ export class ApiService {
   public getRepos(): Observable<Repo[]> {
     return this.http.get<Repo[]>(`${API_URL}/users/${GITHUB_USER}/repos`)
   }
+  //
+  // public getReadMe(repoName : string): {
+  //
+  // }
 
 
 }
