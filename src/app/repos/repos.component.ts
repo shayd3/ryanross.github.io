@@ -5,7 +5,7 @@ import { Repo } from '../models/repo';
 import {Readme} from "../models/readme";
 
 import { ApiService } from '../api.service';
-import { RepoDialogComponent } from "../repo-dialog/repo-dialog.component";
+import { RepoDialogComponent } from "../dialogs/repo-dialog/repo-dialog.component";
 
 
 @Component({

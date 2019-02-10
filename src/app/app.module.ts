@@ -12,14 +12,16 @@ import { AppComponent } from './app.component';
 import { ReposComponent } from './repos/repos.component';
 
 import { ApiService } from './api.service';
-import { RepoDialogComponent } from './repo-dialog/repo-dialog.component';
+import { RepoDialogComponent } from './dialogs/repo-dialog/repo-dialog.component';
+import { ErrorDialogComponent } from './dialogs/error-dialog/error-dialog.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     ReposComponent,
-    RepoDialogComponent
+    RepoDialogComponent,
+    ErrorDialogComponent
   ],
   imports: [
     HttpClientModule,
