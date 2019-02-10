@@ -1,8 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from "@angular/common/http";
+import {HttpClient, HttpClientModule} from "@angular/common/http";
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MarkdownModule } from 'ngx-markdown';
 
 /* Material Angular Modules */
 import {MatButtonModule, MatCheckboxModule, MatDialogModule, MatCardModule} from '@angular/material';
@@ -28,7 +29,9 @@ import { RepoDialogComponent } from './repo-dialog/repo-dialog.component';
     MatButtonModule,
     MatCheckboxModule,
     MatDialogModule,
-    MatCardModule
+    MatCardModule,
+    HttpClientModule,
+    MarkdownModule.forRoot({ loader: HttpClient })
   ],
   providers: [
     ApiService

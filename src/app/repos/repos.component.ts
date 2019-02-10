@@ -2,8 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 
 import { Repo } from '../models/repo';
+import {Readme} from "../models/readme";
+
 import { ApiService } from '../api.service';
 import { RepoDialogComponent } from "../repo-dialog/repo-dialog.component";
+
 
 @Component({
   selector: 'app-repos',
@@ -13,18 +16,19 @@ import { RepoDialogComponent } from "../repo-dialog/repo-dialog.component";
 export class ReposComponent implements OnInit {
 
   repos : Repo[];
+  readMe : Readme;
 
-  constructor(private apiService: ApiService, public dialog: MatDialog) {}
+    constructor(private apiService: ApiService, public dialog: MatDialog) {}
 
-  openDialog(): void {
-    const dialogRef = this.dialog.open(RepoDialogComponent, {
-      width: '250px',
-      data: {title: "Test Title", description: "Test Description"}
-    });
+    openDialog(repoName): void {
+      const dialogRef = this.dialog.open(RepoDialogComponent, {
+        width: '55em',
+        data: { title: repoName, description: this.readMe.content, url: this.readMe.url, markdown: this.readMe.markdown }
+      });
 
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
-    });
+      dialogRef.afterClosed().subscribe(result => {
+        console.log('The dialog was closed');
+      });
   }
 
   ngOnInit() {
@@ -33,6 +37,23 @@ export class ReposComponent implements OnInit {
 
   getRepos(): void {
     this.apiService.getRepos().subscribe((res)=> this.repos = res);
+  }
+
+  generateDialogContent(repoName): void {
+    this.apiService.getReadMe(repoName).subscribe((res : Readme) =>{
+      this.readMe = {
+        content: res['content'],
+        size: res['size'],
+        url: res['download_url'],
+        markdown: this.decodeBase64(res['content'])
+      }
+      console.log(this.readMe);
+      this.openDialog(repoName);
+    });
+  }
+
+  decodeBase64(content): string {
+      return atob(content);
   }
 
 
