@@ -6,6 +6,7 @@ import {Readme} from "../models/readme";
 
 import { ApiService } from '../api.service';
 import { RepoDialogComponent } from "../dialogs/repo-dialog/repo-dialog.component";
+import {ErrorDialogComponent} from "../dialogs/error-dialog/error-dialog.component";
 
 
 @Component({
@@ -49,7 +50,13 @@ export class ReposComponent implements OnInit {
       }
       console.log(this.readMe);
       this.openDialog(repoName);
-    });
+    },
+      error => {
+        const dialogRef = this.dialog.open(ErrorDialogComponent, {
+          width: '55em',
+          data: { title: repoName, error: "No README.md found in repo or there was an error retrieving README.md." }
+        });
+      });
   }
 
   decodeBase64(content): string {

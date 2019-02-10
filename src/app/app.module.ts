@@ -40,7 +40,8 @@ import { ErrorDialogComponent } from './dialogs/error-dialog/error-dialog.compon
   ],
   bootstrap: [AppComponent],
   entryComponents: [
-    RepoDialogComponent
+    RepoDialogComponent,
+    ErrorDialogComponent
   ]
 })
 export class AppModule { }
