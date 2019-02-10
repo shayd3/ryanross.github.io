@@ -8,6 +8,7 @@ import {Readme} from "./models/readme";
 
 const API_URL = environment.github_url
 const GITHUB_USER = environment.github_user
+const MD_FILE = environment.md_file_name
 
 @Injectable({
   providedIn: 'root'
@@ -22,8 +23,8 @@ export class ApiService {
   }
 
   public getReadMe(repoName): Observable<Readme> {
-    console.log(`Get Request to -> ${API_URL}/repos/${GITHUB_USER}/${repoName}/readme?ref=master`)
-    return this.http.get<Readme>(`${API_URL}/repos/${GITHUB_USER}/${repoName}/readme?ref=master`)
+    console.log(`Get Request to -> ${API_URL}/repos/${GITHUB_USER}/${repoName}/contents/${MD_FILE}?ref=master`)
+    return this.http.get<Readme>(`${API_URL}/repos/${GITHUB_USER}/${repoName}/contents/${MD_FILE}?ref=master`)
   }
 
 
