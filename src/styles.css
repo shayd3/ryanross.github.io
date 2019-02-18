@@ -13,3 +13,32 @@ body {
 p {
   font-family: 'Ubuntu', sans-serif;
 }
+
+header {
+  margin-bottom: 2em;
+}
+
+.bg-primary {
+  background-color: #00bcd4 !important;
+}
+
+.text-white {
+  color: #fff !important;
+}
+
+.mat-primary {
+  background-color: #00bcd4 !important;
+  color: #000000 !important;
+}
+
+.mat-primary-light {
+  background-color: #62efff;
+  color: #000000 !important;
+}
+
+.mat-primary-dark {
+  background-color: #008ba3;
+  color: #ffffff;
+}
+
+
