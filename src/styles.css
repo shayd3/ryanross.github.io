@@ -27,18 +27,31 @@ header {
 }
 
 .mat-primary {
-  background-color: #00bcd4 !important;
-  color: #000000 !important;
-}
-
-.mat-primary-light {
-  background-color: #62efff;
-  color: #000000 !important;
+  background-color: #3498DB !important;
 }
 
 .mat-primary-dark {
-  background-color: #008ba3;
+  background-color: #2980B9;
   color: #ffffff;
+}
+
+.mat-dark {
+  background-color: #2C3E50 !important;
+  color: #ffffff;
+}
+
+.mat-warning {
+  background-color: #E74C3C !important;
+  color: #ffffff; 
+}
+
+.mat-white {
+  background-color: #ECF0F1 !important;
+  color: black;
+}
+
+#links i{
+  margin-right: 15px;
 }
 
 

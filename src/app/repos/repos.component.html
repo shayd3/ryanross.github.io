@@ -14,7 +14,7 @@
         <div class="card-body d-flex flex-column">
           <h5 class="card-title">{{ repo.name }}</h5>
           <p class="card-text" *ngIf="repo.description != null">{{ repo.description }}</p>
-          <button mat-raised-button color="primary" class="mt-auto" (click)="generateDialogContent(repo.name)">Details</button>
+          <button mat-raised-button class="mt-auto mat-primary" (click)="generateDialogContent(repo.name)">Details</button>
         </div>
       </div>
     </div>
