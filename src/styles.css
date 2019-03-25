@@ -54,7 +54,16 @@ header {
   color: black;
 }
 
-#links i{
+i {
+  margin-right: 5px;
+  color: white;
+  transition: .5s;
+}
+i:hover {
+  color: #3498DB  !important;
+}
+
+#links a > i{
   margin-right: 15px;
 }
 
@@ -162,12 +171,4 @@ header {
   overflow-y: scroll;
   max-height: 35rem;
   margin-bottom: 20px;
-}
-
-i {
-  color: white;
-  transition: .5s;
-}
-i:hover {
-  color: #3498DB  !important;
 }
