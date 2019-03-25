@@ -155,8 +155,19 @@ header {
   text-transform: uppercase;
 }
 
+#resume-content::-webkit-scrollbar { 
+  display: none; 
+}
 .resume {
   overflow-y: scroll;
   max-height: 35rem;
   margin-bottom: 20px;
+}
+
+i {
+  color: white;
+  transition: .5s;
+}
+i:hover {
+  color: #3498DB  !important;
 }
