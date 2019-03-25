@@ -88,7 +88,7 @@ header {
   background-color: initial;
 }
 
-.border-line-h:after {
+.resume-item.border-line-h::after {
   content: '';
   position: absolute;
   left: 0;
@@ -153,4 +153,10 @@ header {
   color: #999999;
   font-weight: 300;
   text-transform: uppercase;
+}
+
+.resume {
+  overflow-y: scroll;
+  max-height: 35rem;
+  margin-bottom: 20px;
 }
