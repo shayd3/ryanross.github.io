@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Ryan Ross (shayd3) - Senior DevOps Engineer">
+  <meta name="theme-color" content="#050505">
+  <title>ryanross.dev</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👨‍💻</text></svg>">
+</head>
+<body>
+  <main>
+    <!-- Subtle ambient glow -->
+    <div class="glow"></div>
+
+    <div class="content">
+      <!-- Header -->
+      <header>
+        <h1>Ryan Ross (shayd3)</h1>
+        <p class="tagline">
+          <span id="typewriter"></span><span class="cursor">|</span>
+        </p>
+      </header>
+
+  <script>
+    const phrases = [
+      "Senior DevOps Engineer",
+      "Bread Baker",
+      "Caffeine Enthusiast",
+      "Guitar Player",
+      "OSRS Addict"
+    ];
+
+    let phraseIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+    const typewriter = document.getElementById('typewriter');
+
+    function type() {
+      const currentPhrase = phrases[phraseIndex];
+
+      if (isDeleting) {
+        typewriter.textContent = currentPhrase.substring(0, charIndex - 1);
+        charIndex--;
+      } else {
+        typewriter.textContent = currentPhrase.substring(0, charIndex + 1);
+        charIndex++;
+      }
+
+      let delay = isDeleting ? 50 : 100;
+
+      if (!isDeleting && charIndex === currentPhrase.length) {
+        delay = 2000; // Pause at end
+        isDeleting = true;
+      } else if (isDeleting && charIndex === 0) {
+        isDeleting = false;
+        phraseIndex = (phraseIndex + 1) % phrases.length;
+        delay = 500; // Pause before typing next
+      }
+
+      setTimeout(type, delay);
+    }
+
+    // Start the animation
+    type();
+  </script>
+
+      <!-- Links -->
+      <nav>
+        <a href="https://github.com/shayd3" target="_blank" rel="noopener noreferrer" class="link">
+          <span class="link-text">github</span>
+          <svg xmlns="http://www.w3.org/2000/svg" class="external-icon" viewBox="0 0 20 20" fill="currentColor">
+            <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z" />
+            <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z" />
+          </svg>
+          <span class="hover-line"></span>
+        </a>
+        <a href="https://linkedin.com/in/shayd3" target="_blank" rel="noopener noreferrer" class="link">
+          <span class="link-text">linkedin</span>
+          <svg xmlns="http://www.w3.org/2000/svg" class="external-icon" viewBox="0 0 20 20" fill="currentColor">
+            <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z" />
+            <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z" />
+          </svg>
+          <span class="hover-line"></span>
+        </a>
+      </nav>
+    </div>
+  </main>
+
+  <!-- Footer with social links -->
+  <footer>
+    <a href="https://github.com/shayd3" target="_blank" rel="noopener noreferrer">gh</a>
+    <a href="https://www.linkedin.com/in/ryanross215/" target="_blank" rel="noopener noreferrer">linkedin</a>
+  </footer>
+</body>
+</html>
